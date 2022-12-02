@@ -24,7 +24,7 @@ let totalFiles = 0;
 let arraybuffer;
 const req = new XMLHttpRequest();
 req.responseType = 'json';
-req.open('GET', "../assets/js/compile/mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
+req.open('GET', "../assets/js/compiler/mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
 req.onload = function () {
     var jsonResponse = req.response;
     arraybuffer = new Array(totalFiles);
