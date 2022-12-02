@@ -19,10 +19,10 @@ const source = `private static void TestKernel(Index1D index, ArrayView<int> inp
 gui.configureEditor();
 gui.editor.getDoc().setValue(source);
 
-//LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
-let totalFiles = 0;
-let arraybuffer;
 document.addEventListener('DOMContentLoaded',() => {
+    //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
+    var totalFiles = 0;
+    var arraybuffer;
     const req = new XMLHttpRequest();
 req.responseType = 'json';
 req.open('GET', "../assets/js/compiler/mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
