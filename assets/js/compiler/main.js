@@ -16,10 +16,11 @@ const source = `private static void TestKernel(Index1D index, ArrayView<int> inp
 {
     output[index] = input[index];
 }`;
-gui.configureEditor();
-gui.editor.getDoc().setValue(source);
+
 
 document.addEventListener('DOMContentLoaded',() => {
+    gui.configureEditor();
+gui.editor.getDoc().setValue(source);
     //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
     var totalFiles = 0;
     var arraybuffer;
