@@ -40,7 +40,7 @@ req.onload = function () {
                     gui.hideLoader();
                 }
             };
-            http.open("GET", "./managed/".concat(jsonResponse.assets[i].name));
+            http.open("GET", "../assets/js/compiler/managed/".concat(jsonResponse.assets[i].name));
             http.responseType = "arraybuffer";
             http.send();
             totalFiles++;
