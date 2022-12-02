@@ -18,7 +18,7 @@ const source = `private static void TestKernel(Index1D index, ArrayView<int> inp
 }`;
 
 
-document.addEventListener('DOMContentLoaded',() => {
+if (document.readyState == 'loading') {
     gui.configureEditor();
 gui.editor.getDoc().setValue(source);
     //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
@@ -50,7 +50,7 @@ req.onload = function () {
     }
 };
 req.send(null);
-});
+}
 
 
 const config = getConfig();
