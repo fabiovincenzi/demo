@@ -1,8 +1,7 @@
 import { dotnet } from './dotnet.js';
 import { Gui } from './gui.js';
 
-console.log("ciaoo");
-console.log("AA");
+
 const is_browser = typeof window != "undefined";
 if (!is_browser) throw new Error(`Expected to be running in a browser`);
 
@@ -10,7 +9,6 @@ const { setModuleImports, getAssemblyExports, getConfig, runMainAndExit } = awai
     .withDiagnosticTracing(false)
     .withApplicationArgumentsFromQuery()
     .create();
-addEventListener("load", (event) => {console.log("hhh")});
 
 const gui = new Gui();
 const source = `private static void TestKernel(Index1D index, ArrayView<int> input, ArrayView<int> output)
@@ -39,7 +37,7 @@ req.onload = function () {
                 arraybuffer[loadedFiles] = new Uint8Array(http.response);
                 loadedFiles++;
                 if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
-                    dispatchEvent(new Event('load'));
+
                     gui.hideLoader();
                 }
             };
