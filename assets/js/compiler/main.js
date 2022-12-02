@@ -20,7 +20,6 @@ const source = `private static void TestKernel(Index1D index, ArrayView<int> inp
 //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
 let totalFiles = 0;
 let arraybuffer;
-window.onload = function() {
     console.log("preload");
     gui.configureEditor();
     gui.editor.getDoc().setValue(source);
@@ -39,6 +38,7 @@ req.onload = function () {
                 arraybuffer[loadedFiles] = new Uint8Array(http.response);
                 loadedFiles++;
                 if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
+                    dispatchEvent(new Event('load'));
                     gui.hideLoader();
                 }
             };
@@ -50,7 +50,7 @@ req.onload = function () {
     }
 };
 req.send(null);
-}
+
 
 
 const config = getConfig();
