@@ -10,6 +10,7 @@ const { setModuleImports, getAssemblyExports, getConfig, runMainAndExit } = awai
     .withDiagnosticTracing(false)
     .withApplicationArgumentsFromQuery()
     .create();
+addEventListener("load", (event) => {console.log("hhh")});
 
 const gui = new Gui();
 const source = `private static void TestKernel(Index1D index, ArrayView<int> input, ArrayView<int> output)
