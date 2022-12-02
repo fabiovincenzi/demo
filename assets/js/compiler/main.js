@@ -16,14 +16,13 @@ const source = `private static void TestKernel(Index1D index, ArrayView<int> inp
 {
     output[index] = input[index];
 }`;
-
-
-if (document.readyState == 'loading') {
-    gui.configureEditor();
+gui.configureEditor();
 gui.editor.getDoc().setValue(source);
-    //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
-    var totalFiles = 0;
-    var arraybuffer;
+
+//LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
+let totalFiles = 0;
+let arraybuffer;
+window.onload = function() {
     const req = new XMLHttpRequest();
 req.responseType = 'json';
 req.open('GET', "../assets/js/compiler/mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
