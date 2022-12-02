@@ -1,0 +1,6 @@
+#breadcrumbs .container { margin-left: 316px; }
+
+#search .empty-message { padding: 5px 10px; text-align: center; }
+
+#search .tt-suggestion { padding: 5px 10px; text-align: left; }
+#search .tt-suggestion:hover { color: #00458D; }

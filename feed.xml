@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-02T08:42:23+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ILGPU - A Modern GPU Compiler for .Net Programs</title><subtitle>A modern, lightweight &amp; fast GPU compiler for high-performance .NET programs.</subtitle><entry><title type="html">New Talk to the Dev(s) Timeslot 2021!</title><link href="http://localhost:4000/dev-talk" rel="alternate" type="text/html" title="New Talk to the Dev(s) Timeslot 2021!" /><published>2021-03-15T00:00:00+01:00</published><updated>2021-03-15T00:00:00+01:00</updated><id>http://localhost:4000/talk-to-the-devs</id><content type="html" xml:base="http://localhost:4000/dev-talk">&lt;!-- ======= Inner Page Section ======= --&gt;
+&lt;section class=&quot;inner-page&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;section-title&quot;&gt;
+            &lt;h2&gt;Immediate Assistance via Discord / Weekly Talk-To-The-Dev(s) Meeting / New Timeslot 2021!&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;p&gt;The ILGPU community will try to provide immediate help, feedback and suggestions via &lt;a
+                        href=&quot;https://discord.gg/X6RBCff&quot; target=&quot;_blank&quot;&gt;Discord ASAP&lt;/a&gt;. Log on to the server and you
+                can get started right away. Alternatively, you can always send an email via the contact page.&lt;/p&gt;
+            &lt;p&gt;There will be a weekly talk-to-the-dev(s) meeting on the Discord server every &lt;b&gt;Wednesday&lt;/b&gt; from
+                &lt;b&gt;10-11pm&lt;/b&gt;
+                Berlin Time, &lt;b&gt;8-9am&lt;/b&gt; Canberra Time (+1 day, Thursday), &lt;b&gt;4-5pm&lt;/b&gt; New York Time, &lt;b&gt;1-2pm&lt;/b&gt;
+                California Time. The first meeting using the updated time slot will take place on March 3rd 2021. Don&apos;t
+                hesitate to join the meeting if you have any questions or suggestions or just want to talk to one of the
+                developers (including me). &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;&lt;!-- End Inner Page Section --&gt;</content><author><name></name></author><summary type="html">There will be a weekly talk-to-the-dev(s) meeting on the Discord server every Wednesday from 10-11pm Berlin Time, 8-9am Canberra Time (+1 day, Thursday), 4-5pm New York Time, 1-2pm California Time. The first meeting using the updated time slot will take place on March 3rd 2021.</summary></entry><entry><title type="html">Enhanced Progress Visibility</title><link href="http://localhost:4000/enhanced" rel="alternate" type="text/html" title="Enhanced Progress Visibility" /><published>2021-02-01T00:00:00+01:00</published><updated>2021-02-01T00:00:00+01:00</updated><id>http://localhost:4000/enhanced-progress-visibility</id><content type="html" xml:base="http://localhost:4000/enhanced">&lt;p&gt;Starting in February 2021, an updated ILGPU version will be available every 6-8 weeks. As the community grows, new
+features will be explicitly tracked on the &lt;a href=&quot;https://github.com/m4rs-mt/ILGPU/issues&quot;&gt;GitHub issues page&lt;/a&gt; and are linked
+to their appropriate milestone to which they belong.&lt;/p&gt;
+
+&lt;p&gt;Each new feature found on this page and is marked with a specific
+difficulty level (beginner, intermediate and advanced).
+At the beginning, we strongly recommend that you take a closer look at the &lt;em&gt;beginner&lt;/em&gt; issues if you plan to contribute
+to the ILGPU project.&lt;/p&gt;</content><author><name></name></author><summary type="html">Starting in February 2021, an updated ILGPU version will be available every 6-8 weeks. As the community grows, new features will be explicitly tracked on the GitHub issues page and are linked to their appropriate milestone to which they belong.</summary></entry><entry><title type="html">Major version released February 15th, 2021</title><link href="http://localhost:4000/new-version" rel="alternate" type="text/html" title="Major version released February 15th, 2021" /><published>2021-01-15T00:00:00+01:00</published><updated>2021-01-15T00:00:00+01:00</updated><id>http://localhost:4000/new-version-released-feb-15</id><content type="html" xml:base="http://localhost:4000/new-version">&lt;!-- ======= Inner Page Section ======= --&gt;
+&lt;section class=&quot;inner-page&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;section-title&quot;&gt;
+            &lt;h2&gt;New ILGPU Major Version (v0.10.0) released on February 15th, 2021&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;p&gt; A new major release of the ILGPU compiler is available.&lt;/p&gt;
+            &lt;p&gt;The new stable version offers significant performance improvements of the generated kernel programs and
+                contains critical resource de-allocation fixes. It is strongly recommended to upgrade to this version as
+                soon as possible to avoid resource and GC related de-allocation issues. For more information, please
+                refer to the &lt;a href=&quot;https://github.com/m4rs-mt/ILGPU/releases/tag/v0.10.0&quot; target=&quot;_blank&quot;&gt;change
+                    log.&lt;/a&gt;
+
+            &lt;p&gt;For a more detailed list of changes and updates refer to the release notes.&lt;/p&gt;
+
+            &lt;p&gt;Special thanks to MoFtZ, Ruberik and jgiannuzzi for contributing to this release.&lt;/p&gt;
+
+            &lt;p&gt;Special thanks to the whole ILGPU community for providing feedback, submitting issues and new feature
+                requests.&lt;/p&gt;
+
+            &lt;p&gt;For a more detailed list of changes and updates refer to the release notes. For a detailed list of
+                individual contributions refer to the &lt;a href=&quot;https://github.com/m4rs-mt/ILGPU/commits/master&quot;
+                                                         target=&quot;_blank&quot;&gt;public Github&lt;/a&gt; commit history.&lt;/p&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;&lt;!-- End Inner Page Section --&gt;</content><author><name></name></author><summary type="html">The new stable version offers significant performance improvements of the generated kernel programs and contains critical resource de-allocation fixes. It is strongly recommended to upgrade to this version as soon as possible to avoid resource and GC related de-allocation issues.</summary></entry></feed>

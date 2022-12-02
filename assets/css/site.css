@@ -1,0 +1,9 @@
+.logo:after { content: url("/assets/img/logo.svg"); }
+
+.cta { background: linear-gradient(rgba(0, 69, 141, 0.9), rgba(0, 69, 141, 0.9)), url("/assets/img/cpu-bg.jpg") fixed center center; }
+
+body { position: relative; min-height: 100vh; }
+
+footer { position: absolute; bottom: 0; width: 100vw; }
+
+main { padding-top: 28px; padding-bottom: 72px; }
