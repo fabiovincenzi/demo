@@ -22,7 +22,8 @@ gui.editor.getDoc().setValue(source);
 //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
 let totalFiles = 0;
 let arraybuffer;
-const req = new XMLHttpRequest();
+document.addEventListener('DOMContentLoaded',() => {
+    const req = new XMLHttpRequest();
 req.responseType = 'json';
 req.open('GET', "../assets/js/compiler/mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
 req.onload = function () {
@@ -48,6 +49,8 @@ req.onload = function () {
     }
 };
 req.send(null);
+});
+
 
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
