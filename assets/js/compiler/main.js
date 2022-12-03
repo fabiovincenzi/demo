@@ -1,7 +1,8 @@
 import { dotnet } from './dotnet.js';
 import { Gui } from './gui.js';
 
-
+console.log("ciaoo");
+console.log("AA");
 const is_browser = typeof window != "undefined";
 if (!is_browser) throw new Error(`Expected to be running in a browser`);
 
@@ -19,9 +20,6 @@ const source = `private static void TestKernel(Index1D index, ArrayView<int> inp
 //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
 let totalFiles = 0;
 let arraybuffer;
-    console.log("preload");
-    gui.configureEditor();
-    gui.editor.getDoc().setValue(source);
     const req = new XMLHttpRequest();
 req.responseType = 'json';
 req.open('GET', "../assets/js/compiler/mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
@@ -37,7 +35,6 @@ req.onload = function () {
                 arraybuffer[loadedFiles] = new Uint8Array(http.response);
                 loadedFiles++;
                 if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
-
                     gui.hideLoader();
                 }
             };
@@ -49,8 +46,6 @@ req.onload = function () {
     }
 };
 req.send(null);
-
-
 
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
