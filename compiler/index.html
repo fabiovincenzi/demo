@@ -181,6 +181,22 @@
                 <textarea id="output">
                 </textarea>
             </div>
+            <script>
+                var editor = CodeMirror.fromTextArea(document.getElementById("source"), {
+            lineNumbers: true,
+            matchBrackets: true,
+            mode: "text/x-csharp",
+            extraKeys: {"Ctrl-Space": "autocomplete"}
+        });
+
+        var output = CodeMirror.fromTextArea(document.getElementById("output"), {
+            lineNumbers: true,
+            matchBrackets: true,
+            readOnly: true,
+            mode: "text/x-csharp",
+            extraKeys: {"Ctrl-Space": "autocomplete"}
+        });
+            </script>
         </div>
     </div>
 
