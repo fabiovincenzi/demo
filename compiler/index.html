@@ -181,22 +181,6 @@
                 <textarea id="output">
                 </textarea>
             </div>
-            <script>
-                var editor = CodeMirror.fromTextArea(document.getElementById("source"), {
-            lineNumbers: true,
-            matchBrackets: true,
-            mode: "text/x-csharp",
-            extraKeys: {"Ctrl-Space": "autocomplete"}
-        });
-
-        var output = CodeMirror.fromTextArea(document.getElementById("output"), {
-            lineNumbers: true,
-            matchBrackets: true,
-            readOnly: true,
-            mode: "text/x-csharp",
-            extraKeys: {"Ctrl-Space": "autocomplete"}
-        });
-            </script>
         </div>
     </div>
 
@@ -246,6 +230,22 @@
 <script src="/assets/js/compiler/matchbrackets.js"></script>
 <script src="/assets/js/compiler/show-hint.js"></script>
 <script src="/assets/js/compiler/clike.js"></script>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("source"), {
+lineNumbers: true,
+matchBrackets: true,
+mode: "text/x-csharp",
+extraKeys: {"Ctrl-Space": "autocomplete"}
+});
+
+var output = CodeMirror.fromTextArea(document.getElementById("output"), {
+lineNumbers: true,
+matchBrackets: true,
+readOnly: true,
+mode: "text/x-csharp",
+extraKeys: {"Ctrl-Space": "autocomplete"}
+});
+</script>
 <script type="module" src="/assets/js/compiler/main.js" ></script>
 <script type="module" src="/assets/js/compiler/dotnet.js" ></script>
 
