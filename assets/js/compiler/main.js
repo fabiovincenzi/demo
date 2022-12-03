@@ -18,6 +18,7 @@ const source = `private static void TestKernel(Index1D index, ArrayView<int> inp
 }`;
 
 //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
+const event = new Event('build');
 let totalFiles = 0;
 let arraybuffer;
 function compile(){
@@ -36,7 +37,7 @@ function compile(){
                     arraybuffer[loadedFiles] = new Uint8Array(http.response);
                     loadedFiles++;
                     if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
-                        const event = new Event('build');
+                        
                         elem.dispatchEvent(event);
                     }
                 };
