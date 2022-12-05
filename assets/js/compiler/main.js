@@ -81,8 +81,8 @@ setModuleImports("main.js", {
         gui.addElementToSelect(ol, value);
     },
     setOutput: (out) => {
-        btn.disabled=false;
-        btn.innerHTML = 'Compile';
+        //btn.disabled=false;
+        //btn.innerHTML = 'Compile';
         output.getDoc().setValue(out);
     }
 });
