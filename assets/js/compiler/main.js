@@ -41,7 +41,10 @@ req.onload = function () {
                 arraybuffer[loadedFiles] = new Uint8Array(http.response);
                 loadedFiles++;
                 if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
-                    
+                    let btn = document.getElementById('compile');
+                    btn.disabled=false;
+                    btn.innerHTML = 'Compile';
+
                 }
             };
             http.open("GET", "../assets/js/compiler/managed/".concat(jsonResponse.assets[i].name));
