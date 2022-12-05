@@ -61,7 +61,7 @@ const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
 
 async function compile() {
-    btn.innerHTML('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Compiling...')
+    btn.innerHTML ='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Compiling...';
     btn.disabled = true;
     const s = editor.getValue();
     var debug = document.getElementById("flexCheckDebug").checked;
