@@ -1,0 +1,20 @@
+.btn-compile{
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 14px;
+    border: 2px solid #47b2e4;
+    font-weight: 600;
+}
+.btn-compile:focus{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    white-space: nowrap;
+    transition: 0.3s;
+}
