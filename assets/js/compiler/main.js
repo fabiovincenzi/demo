@@ -12,6 +12,7 @@ const { setModuleImports, getAssemblyExports, getConfig, runMainAndExit } = awai
     .create();
 
 const gui = new Gui();
+let btn = document.getElementById('compile');
 const source = `private static void TestKernel(Index1D index, ArrayView<int> input, ArrayView<int> output)
 {
     output[index] = input[index];
@@ -41,7 +42,6 @@ req.onload = function () {
                 arraybuffer[loadedFiles] = new Uint8Array(http.response);
                 loadedFiles++;
                 if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
-                    let btn = document.getElementById('compile');
                     btn.disabled=false;
                     btn.innerHTML = 'Compile';
 
@@ -61,6 +61,8 @@ const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
 
 async function compile() {
+    btn.innerHTML('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Compiling...')
+    btn.disabled = true;
     const s = editor.getValue();
     var debug = document.getElementById("flexCheckDebug").checked;
     var assertions = document.getElementById("flexCheckAssertions").checked;
@@ -79,6 +81,8 @@ setModuleImports("main.js", {
         gui.addElementToSelect(ol, value);
     },
     setOutput: (out) => {
+        btn.disabled=false;
+        btn.innerHTML = 'Compile';
         output.getDoc().setValue(out);
     }
 });
