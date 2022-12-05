@@ -6,15 +6,14 @@
     font-size: 14px;
     border: 2px solid #47b2e4;
     font-weight: 600;
+    color: #00458D;
 }
 .btn-compile:focus{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0 10px 30px;
-    font-size: 15px;
-    font-weight: 500;
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
     color: #ffffff;
-    white-space: nowrap;
-    transition: 0.3s;
+    font-size: 14px;
+    border: 2px solid #47b2e4;
+    font-weight: 600;
 }
