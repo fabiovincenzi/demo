@@ -14,10 +14,7 @@ const source = `private static void TestKernel(Index1D index, ArrayView<int> inp
 {
     output[index] = input[index];
 }`;
-var editor = document.getElementsByClassName('.CodeMirror')[0].CodeMirror;
-var output = document.getElementsByClassName('.CodeMirror')[1].CodeMirror;
-editor.setValue(source);
-editor.refresh();
+
 
 //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
 let totalFiles = 0;
