@@ -1,8 +1,6 @@
 import { dotnet } from './dotnet.js';
 import { Gui } from './gui.js';
 
-console.log("ciaoo");
-console.log("AA");
 const is_browser = typeof window != "undefined";
 if (!is_browser) throw new Error(`Expected to be running in a browser`);
 
@@ -16,52 +14,51 @@ const source = `private static void TestKernel(Index1D index, ArrayView<int> inp
 {
     output[index] = input[index];
 }`;
+var editor = $('.CodeMirror')[0].CodeMirror;
+var output = $('.CodeMirror')[1].CodeMirror;
+editor.setValue(source);
+editor.refresh();
 
 //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
-const event = new Event('build');
 let totalFiles = 0;
 let arraybuffer;
-function compile(){
-    const req = new XMLHttpRequest();
-    req.responseType = 'json';
-    req.open('GET', "../assets/js/compiler/mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
-    req.onload = function () {
-        var jsonResponse = req.response;
-        arraybuffer = new Array(totalFiles);
-        var loadedFiles = 0;
+const req = new XMLHttpRequest();
+req.responseType = 'json';
+req.open('GET', "mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
+req.onload = function () {
+    var jsonResponse = req.response;
+    arraybuffer = new Array(totalFiles);
+    var loadedFiles = 0;
 
-        for (var i = 0; i < jsonResponse.assets.length; i++) {
-            if (jsonResponse.assets[i].behavior == 'assembly' && jsonResponse.assets[i].name.includes(".dll")) {
-                const http = new XMLHttpRequest();
-                http.onload = (e) => {
-                    arraybuffer[loadedFiles] = new Uint8Array(http.response);
-                    loadedFiles++;
-                    if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
-                        
-                        elem.dispatchEvent(event);
-                    }
-                };
-                http.open("GET", "../assets/js/compiler/managed/".concat(jsonResponse.assets[i].name));
-                http.responseType = "arraybuffer";
-                http.send();
-                totalFiles++;
-            }
+    for (var i = 0; i < jsonResponse.assets.length; i++) {
+        if (jsonResponse.assets[i].behavior == 'assembly' && jsonResponse.assets[i].name.includes(".dll")) {
+            const http = new XMLHttpRequest();
+            http.onload = (e) => {
+                arraybuffer[loadedFiles] = new Uint8Array(http.response);
+                loadedFiles++;
+                if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
+                   // gui.hideLoader();
+                }
+            };
+            http.open("GET", "./managed/".concat(jsonResponse.assets[i].name));
+            http.responseType = "arraybuffer";
+            http.send();
+            totalFiles++;
         }
-    };
-    req.send(null);
-}
-
-elem.addEventListener('build', (e) => {
-    const s = gui.editor.getValue();
-    var debug = document.getElementById("flexCheckDebug").checked;
-    var assertions = document.getElementById("flexCheckAssertions").checked;
-    var optimizationLvl = document.getElementById("optimizationLevel");
-    exports.Program.Compile(s, debug, assertions, parseInt(optimizationLvl.value));
-});
+    }
+};
+req.send(null);
 
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
 
+async function compile() {
+    const s = editor.getValue();
+    var debug = document.getElementById("flexCheckDebug").checked;
+    var assertions = document.getElementById("flexCheckAssertions").checked;
+    var optimizationLvl = document.getElementById("optimizationLevel");
+    exports.Program.Compile(s, debug, assertions, parseInt(optimizationLvl.value));
+}
 
 document.getElementById('compile').addEventListener('click', compile);
 
@@ -74,7 +71,8 @@ setModuleImports("main.js", {
         gui.addElementToSelect(ol, value);
     },
     setOutput: (out) => {
-        gui.output.getDoc().setValue(out);
+        output.setValue(out);
+        output.refresh();
     }
 });
 runMainAndExit(config.mainAssemblyName, []);

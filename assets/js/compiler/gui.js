@@ -4,8 +4,18 @@
 
     configureEditor() {
         //EDITOR CODE MIRROR
-        
-       
+        this.editor = CodeMirror.fromTextArea(document.getElementById("source"), {
+            lineNumbers: true,
+            matchBrackets: true,
+            mode: "text/x-csharp"
+        });
+
+        this.output = CodeMirror.fromTextArea(document.getElementById("output"), {
+            lineNumbers: true,
+            matchBrackets: true,
+            readOnly: true,
+            mode: "text/x-csharp"
+        });
     }
 
     addElementToSelect(item, value) {
